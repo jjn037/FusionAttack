@@ -1,0 +1,3 @@
+source activate /nfs/volume-456-1/liubingyu/.conda/envs/py36-t12
+CUDA_VISIBLE_DEVICES=0 python train_rcnn_aimg.py --cfg_file cfgs/LI_Fusion_with_attention_use_ce_loss.yaml --batch_size 2 --train_mode rcnn_online --epochs 1 --ckpt_save_interval 1 --cg 0.05 --lr 0.0001 --output_dir ./log/Car/aimg_cg005_lr00001_2/ --ckpt ./log/Car/full_epnet_without_iou_branch/ckpt/checkpoint_epoch_50.pth --set LI_FUSION.ENABLED True LI_FUSION.ADD_Image_Attention True RCNN.POOL_EXTRA_WIDTH 0.2 RPN.SCORE_THRESH 0.2 RCNN.SCORE_THRESH 0.2  USE_IOU_BRANCH False TRAIN.CE_WEIGHT 5.0 ATTACK.LOSS_TYPE 1
+source deactivate
